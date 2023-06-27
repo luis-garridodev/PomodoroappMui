@@ -5,24 +5,24 @@ import Button from '@mui/material/Button';
 import { Box, Grid } from '@mui/material';
 import { PomodoroTimer } from './components/pomodoro-timer';
 import { APPThemeProvider } from './contexts/themecontext';
+import { optionsContext, OptionsContextProvider} from './contexts/optioncontext';
+import { useOptions } from './hooks/use-options';
+
 export default function App() {
   return (
-   
-   
-      <APPThemeProvider>
-       <Box >
-          
-             
-      <PomodoroTimer pomodorotime={10}
-       shortRestTime={2} 
-       LongRestTime={5}
-       cycles={4}
-       />
-       </Box>
-       
-       </APPThemeProvider>
-   
-  
+    <APPThemeProvider>
+      <OptionsContextProvider >
+        <Box sx={{ height: '100vh' }} >
+          <PomodoroTimer 
+        
+        
+          />
+        </Box>
+        
+      </OptionsContextProvider>
+    </APPThemeProvider>
+
+
   );
 }
 

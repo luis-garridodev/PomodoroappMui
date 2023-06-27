@@ -6,6 +6,7 @@ export function useInterval<C extends CallableFunction>(callback: C, delay: numb
     // Remember the latest callback.
     useEffect(() => {
         savedCallback.current = callback;
+        console.log('callback');
     }, [callback]);
 
     // Set up the interval.
